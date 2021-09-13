@@ -1,0 +1,28 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-poppins;
+}
+
+// Custom vuesax style
+.vs-input {
+  width: 100%;
+  @include font-text($font-16, normal, $dark);
+  font-family: $font-poppins;
+}
+
+// Global button
+.btn {
+  padding: 10px 40px;
+  @include font-text($font-14, bold, $light);
+  background-color: $dark;
+  border-radius: 10px;
+}
