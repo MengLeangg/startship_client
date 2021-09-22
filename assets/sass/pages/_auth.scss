@@ -1,0 +1,166 @@
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  //background: radial-gradient(circle, $primary 0%, $second 100%);
+  //background: url("~/assets/images/3D_bg.jpg") center / cover no-repeat;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  background: url("~/assets/images/mars_bg.png") center / cover no-repeat;
+  @include respond-to('sm') {
+    background: none;
+  }
+}
+
+.auth-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  margin-top: 30px;
+
+  @include respond-to('sm') {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+
+  .auth-container {
+    width: 550px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5em;
+    border-radius: 10px;
+    background: $light;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(.2rem);
+    z-index: 2;
+
+    @include respond-to('sm') {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 2em;
+      // background: $light;
+      // backdrop-filter: blur(0);
+      background-image: linear-gradient(to bottom, #ffffff, #dddbfb, #b5b9f6, #849af3, #337def);
+      border-radius: 0;
+    }
+
+    .auth-form {
+      width: 100%;
+
+      .auth-logo {
+        margin-bottom: 2em;
+
+        .logo {
+          text-align: center;
+          margin-bottom: 50px;
+          @include font-text($font-38, bold, $dark)
+        }
+
+        .auth-title {
+          @include font-text($font-28, bold, $dark)
+        }
+
+        .auth-subtitle {
+          // overflow: hidden;
+          // white-space: nowrap;
+          //margin: 0 auto;
+          // border-right: .15em solid $primary;
+          letter-spacing: .2px;
+          @include font-text($font-20, normal, $dark);
+          // animation: typing 4s steps(30, end), blink-caret 1s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          //50% { border-color: $primary }
+          //80% { border-color: red }
+        }
+
+      }
+
+      //.form-group {
+      //  margin: 20px 0;
+      //}
+
+      @include respond-to('sm') {
+        form {
+          margin-top: 5em;
+        }
+
+        .vs-input {
+          background-color: transparent;
+          border: 1px solid $dark;
+        }
+
+        .form-action {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 2em;
+          width: 100%;
+
+          .btn-signin {
+            width: 100%;
+            margin-left: -1px;
+          }
+        }
+
+      }
+
+    }
+
+    .auth-text {
+      width: 100%;
+      padding: 20px 0 0 0;
+      text-align: center;
+
+      .text {
+        @include font-text($font-14, normal, $dark);
+        .link {
+          @include font-text($font-14, normal, $danger);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      @include respond-to('sm') {
+        position: absolute;
+        bottom: 6em;
+        left: 0;
+        .text {
+          .link {
+            color: $light;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.vs-input__label {
+  @include font-text($font-14, normal, $dark);
+}

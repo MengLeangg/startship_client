@@ -1,0 +1,20 @@
+{
+  "ChatCard": {
+    "description": "Auto imported from components/ChatCard.vue"
+  },
+  "Friend": {
+    "description": "Auto imported from components/Friend.vue"
+  },
+  "ListUsers": {
+    "description": "Auto imported from components/ListUsers.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from components/Navbar.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  }
+}

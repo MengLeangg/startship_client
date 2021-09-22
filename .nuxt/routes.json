@@ -1,0 +1,26 @@
+[
+  {
+    "name": "messages",
+    "path": "/messages",
+    "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/messages.vue",
+    "chunkName": "pages/messages"
+  },
+  {
+    "name": "signin",
+    "path": "/signin",
+    "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/signin.vue",
+    "chunkName": "pages/signin"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/signup.vue",
+    "chunkName": "pages/signup"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]
