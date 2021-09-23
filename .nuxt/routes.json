@@ -3,24 +3,28 @@
     "name": "messages",
     "path": "/messages",
     "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/messages.vue",
-    "chunkName": "pages/messages"
+    "chunkName": "pages/messages",
+    "_name": "_325f55a4"
   },
   {
     "name": "signin",
     "path": "/signin",
     "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/signin.vue",
-    "chunkName": "pages/signin"
+    "chunkName": "pages/signin",
+    "_name": "_167af304"
   },
   {
     "name": "signup",
     "path": "/signup",
     "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/signup.vue",
-    "chunkName": "pages/signup"
+    "chunkName": "pages/signup",
+    "_name": "_2b11497a"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_1c7f4f60"
   }
 ]
