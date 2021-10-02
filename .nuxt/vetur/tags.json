@@ -1,20 +1,38 @@
 {
-  "ChatCard": {
-    "description": "Auto imported from components/ChatCard.vue"
-  },
   "Friend": {
     "description": "Auto imported from components/Friend.vue"
   },
-  "ListUsers": {
-    "description": "Auto imported from components/ListUsers.vue"
+  "FriendLoading": {
+    "description": "Auto imported from components/FriendLoading.vue"
   },
-  "Navbar": {
-    "description": "Auto imported from components/Navbar.vue"
+  "Menu": {
+    "description": "Auto imported from components/Menu.vue"
+  },
+  "Message": {
+    "description": "Auto imported from components/Message.vue"
+  },
+  "MessagePanel": {
+    "description": "Auto imported from components/MessagePanel.vue"
+  },
+  "MessagePanelEmpty": {
+    "description": "Auto imported from components/MessagePanelEmpty.vue"
   },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
-  "Tutorial": {
-    "description": "Auto imported from components/Tutorial.vue"
+  "People": {
+    "description": "Auto imported from components/People.vue"
+  },
+  "Profile": {
+    "description": "Auto imported from components/Profile.vue"
+  },
+  "RocketLoading": {
+    "description": "Auto imported from components/RocketLoading.vue"
+  },
+  "SwitchMode": {
+    "description": "Auto imported from components/SwitchMode.vue"
+  },
+  "User": {
+    "description": "Auto imported from components/User.vue"
   }
 }

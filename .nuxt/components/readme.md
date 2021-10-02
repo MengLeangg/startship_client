@@ -6,9 +6,15 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<ChatCard>` | `<chat-card>` (components/ChatCard.vue)
 - `<Friend>` | `<friend>` (components/Friend.vue)
-- `<ListUsers>` | `<list-users>` (components/ListUsers.vue)
-- `<Navbar>` | `<navbar>` (components/Navbar.vue)
+- `<FriendLoading>` | `<friend-loading>` (components/FriendLoading.vue)
+- `<Menu>` | `<menu>` (components/Menu.vue)
+- `<Message>` | `<message>` (components/Message.vue)
+- `<MessagePanel>` | `<message-panel>` (components/MessagePanel.vue)
+- `<MessagePanelEmpty>` | `<message-panel-empty>` (components/MessagePanelEmpty.vue)
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
-- `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
+- `<People>` | `<people>` (components/People.vue)
+- `<Profile>` | `<profile>` (components/Profile.vue)
+- `<RocketLoading>` | `<rocket-loading>` (components/RocketLoading.vue)
+- `<SwitchMode>` | `<switch-mode>` (components/SwitchMode.vue)
+- `<User>` | `<user>` (components/User.vue)

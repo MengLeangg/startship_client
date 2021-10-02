@@ -10,6 +10,8 @@ import '../node_modules/@nuxtjs/tailwindcss/dist/runtime/tailwind.css'
 
 import '../node_modules/vuesax/dist/vuesax.css'
 
+import '../assets/sass/theme/_color-mode.scss'
+
 import _6f6c098b from '../layouts/default.vue'
 import _77430317 from '../layouts/empty.vue'
 

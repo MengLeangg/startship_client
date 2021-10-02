@@ -12,22 +12,24 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'vuesax/dist/vuesax.css'
+    'vuesax/dist/vuesax.css',
+    '@/assets/sass/theme/_color-mode.scss',
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // https://vuesax.com/
     "~/plugins/vuesax.js",
-    // https://vee-validate.logaretm.com/v3
     "~/plugins/vee-validate.js",
-    "~/plugins/vue-chat-scroll.js"
+    "~/plugins/vue-chat-scroll.js",
+    "~/plugins/infiniteloading.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,6 +43,8 @@ export default {
     '@nuxtjs/style-resources',
     // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
+    // https://color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode'
   ],
 
   styleResources: {
@@ -48,7 +52,9 @@ export default {
       './assets/sass/utilities/_variables.scss', // sass variable
       './assets/sass/utilities/_mixins.scss', // sass mixin method
       './assets/sass/utilities/_breakpoints.scss', // sass responsive breakpoint
-      './assets/sass/_main.scss' // use underscore "_" & also file extension ".scss"
+      './assets/sass/_main.scss', // use underscore "_" & also file extension ".scss"
+      './assets/sass/theme/_color-mode.scss', // dark-light color variable
+      './assets/sass/theme/_transitions.scss' // transition animation
     ]
   },
 
@@ -56,11 +62,19 @@ export default {
   googleFonts: {
     families: {
       Poppins: {
-        wght: [100, 200, 300, 400, 500, 600, 700],
+        wght: [100, 200, 300, 400, 500, 600, 700, 900],
         ital: [100]
       },
-      Dangrek: {
-        wght: [100, 200, 300, 400, 500, 600, 700],
+      // Dangrek: {
+      //   wght: [100, 200, 300, 400, 500, 600, 700],
+      //   ital: [100]
+      // },
+      // Bokor: {
+      //   wght: [100, 200, 300, 400, 500, 600, 700, 900],
+      //   ital: [100]
+      // },
+      Battambang: {
+        wght: [100, 200, 300, 400, 500, 600, 700, 900],
         ital: [100]
       }
     }
@@ -71,10 +85,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxtjs/proxy',
-    // https://nuxt-socket-io.netlify.app/
     'nuxt-socket-io',
     '@nuxtjs/dayjs',
-    'cookie-universal-nuxt',
   ],
 
   auth: {
@@ -101,13 +113,23 @@ export default {
   },
 
   axios: {
+    name: 'main',
     baseURL: "http://localhost:5000/api",  // here set your API url
     // proxy: true
   },
 
+  // socket.io module
   io: {
     sockets: [{
-      url: 'http://localhost:5000' // IO server lives here
+      name: 'home',
+      url: 'http://localhost:5000', // IO server lives here
+      default: true,
+      // vuex: {
+      //   mutations: [{
+      //     sendMessage: 'ADD_MESSAGE',
+      //     getMessage: 'ADD_MESSAGE'
+      //   }]
+      // }
     }]
   },
 

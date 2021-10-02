@@ -1,5 +1,12 @@
 [
   {
+    "name": "chat",
+    "path": "/chat",
+    "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/chat.vue",
+    "chunkName": "pages/chat",
+    "_name": "_5815363a"
+  },
+  {
     "name": "messages",
     "path": "/messages",
     "component": "/Users/mengly/Documents/NodeJs/starship/client/pages/messages.vue",

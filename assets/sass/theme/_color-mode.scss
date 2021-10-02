@@ -1,0 +1,57 @@
+.light-mode {
+  --color: #243746;
+  --color-primary: #337def;
+  --color-secondary: #0e2233;
+  --color-hover: #efefef;
+  --bg: #ffffff;
+  --bg-secondary: #F9F9F8;
+  --border-color: #ddd;
+  --bg-app-left: #ffffff;
+  --bg-app-main: #F4F6F5;
+
+  // chat color
+  --bg-message-text: #D3D3D3;
+}
+.dark-mode {
+  --color: #ebf4f1;
+  --color-primary: #4F37A2;
+  --color-secondary: #fdf9f3;
+  --color-hover: #21242B;
+  --bg: #141B21;
+  --bg-secondary: #21242B;
+  --border-color: #230847;
+  --bg-app-left: #0F0C12;
+  --bg-app-main: #171B1F;
+
+  // chat color
+  --bg-message-text: #21242B;
+
+}
+//$primary: var(--color-primary);
+$secondary: var(--color-secondary);
+$color: var(--color);
+$color-hover: var(--color-hover);
+$bg: var(--bg);
+$bg-secondary: var(--bg-secondary);
+$border-color: var(--border-color);
+$bg-app-left: var(--bg-app-left);
+$bg-app-main: var(--bg-app-main);
+
+// chat color
+$bg-message-text: var(--bg-message-text);
+
+
+body {
+  background-color: $bg;
+  color: $color;
+  transition: background-color 0.3s;
+}
+
+// Dark light mode Vuesax input
+.vs-input {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: $color-hover !important;
+  @include font-text($font-16, normal, $color);
+  font-family: $font-poppins, $font-battambang;
+}

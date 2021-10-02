@@ -8,22 +8,37 @@
           <h1 class="logo-text">Starship🚀</h1>
         </div>
         <div class="app-left-nav">
-          <h1 class="title-text">Recent</h1>
-          <div class="group-button">
-            <button type="button" class="btn search">
-              <svg width="15" height="15" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-            </button>
-            <button type="button" class="btn add">
-              <svg width="15" height="15" viewBox="0 0 426.66667 426.66667" xmlns="http://www.w3.org/2000/svg"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"/></svg>
-            </button>
+          <div class="search-wrap">
+            <span class="search-icon">
+              <svg width="20" height="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            </span>
+            <input type="text" v-model="search" @keypress.enter="findUser" placeholder="Search you friend">
           </div>
+
+          <!--          <h1 class="title-text">Recent</h1>-->
+<!--          <div class="group-button">-->
+<!--            <button type="button" class="btn search">-->
+<!--              <svg width="15" height="15" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>-->
+<!--            </button>-->
+<!--            <button type="button" class="btn add">-->
+<!--              <svg width="15" height="15" viewBox="0 0 426.66667 426.66667" xmlns="http://www.w3.org/2000/svg"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"/></svg>-->
+<!--            </button>-->
+<!--          </div>-->
         </div>
       </div>
 
       <!--- chat list --->
       <ul class="chat-list-wrapper" style="margin-left: -10px; margin-right: -10px">
-        <li v-for="(conversation, key) in conversations" :key="key" @click="openChat(conversation)">
-          <ChatCard :conversation="conversation" :current_user="loggedInUser" :users="users" :active="true"/>
+        <li v-if="results.length > 0">
+          <div v-show="is_wait_find" v-for="n in 2" :key="n">
+            <FriendLoading/>
+          </div>
+          <div v-for="(user, $i) in results" :key="$i">
+            <User :senderId="loggedInUser._id" :receiverId="user._id" :avatar="user.avatar" :full_name="user.full_name"/>
+          </div>
+        </li>
+        <li v-else v-for="conversation in conversations" :key="conversation._id" @click="openChat(conversation)">
+          <Friend ref="friend" :conversation="conversation" :current_user="loggedInUser"/>
         </li>
       </ul>
 
@@ -37,12 +52,12 @@
       <div class="app-main-header">
         <!--- app main user chat with --->
         <div class="app-main-chat-head">
-          <vs-avatar class="flex-none" size="50" circle>
+          <vs-avatar class="flex-none" size="50" circle :writing="display_typing && display_typing.userId === friend_chat._id && display_typing.typing">
             <img :src="friend_chat.avatar" alt="">
           </vs-avatar>
           <div class="app-main-chat-info">
             <h1 class="chat-with_name">{{ friend_chat.first_name + ' ' + friend_chat.last_name }}</h1>
-            <p class="chat-with_online">Online 8 min ago</p>
+            <p class="chat-with_online">{{ friend_chat.online ? 'Active now' : 'Online ' + $dayjs(friend_chat.online_at).fromNow() }}</p>
           </div>
         </div>
         <!--- app main user chat with actions video-call call-voice or setting --->
@@ -65,7 +80,7 @@
         <!--- message --->
         <li class="message-wrapper" v-for="(message, $i) in messages" :key="$i" :class="{ 'reverse' : message.sender === loggedInUser._id }">
           <!--- message avatar --->
-          <vs-avatar class="message-avatar" circle size="35">
+          <vs-avatar v-show="message.sender !== loggedInUser._id" class="message-avatar" circle size="35">
             <img :src="message.sender === loggedInUser._id ? loggedInUser.avatar : friend_chat.avatar"
                  :alt="message.sender === loggedInUser._id ? loggedInUser.first_name + ' ' + loggedInUser.last_name : friend_chat.first_name + ' ' + friend_chat.last_name"
             >
@@ -75,13 +90,6 @@
             <div class="message-box" v-html="message.text"></div>
             <span class="message-date">{{ $dayjs(message.createdAt).fromNow() }}</span>
           </div>
-        </li>
-
-        <!--- typing loading --->
-        <li v-if="display_typing && display_typing.userId === friend_chat._id && display_typing.typing" class="typing-loading mb-2">
-          <vs-avatar writing badge badge-color="primary" circle size="45">
-            <img :src="friend_chat.avatar" alt="">
-          </vs-avatar>
         </li>
 
       </ul>
@@ -129,13 +137,17 @@
     <!--- app right side --->
     <div class="app-right">
       <div class="app-profile-wrapper">
-        <div class="app-profile-avatar">
-          <input type="file" class="hidden" ref="avatarFileInput" accept="image/*">
-          <img :src="loggedInUser.avatar" alt="">
-          <button type="button" class="app-profile-change" @click="$refs.avatarFileInput.click()">
+        <!-- user profile avatar -->
+        <vs-avatar class="app-profile-avatar" :loading="is_wait_avatar" history history-gradient circle size="70" primary>
+          <img v-if="loggedInUser.avatar" :src="loggedInUser.avatar" :alt="loggedInUser.first_name + ' ' + loggedInUser.last_name">
+          <template v-if="!loggedInUser.avatar" #text>
+            {{ loggedInUser.first_name + ' ' + loggedInUser.last_name }}
+          </template>
+          <button type="button" class="app-profile-change" :disabled="is_wait_avatar" @click="$refs.avatarFileInput.click()">
             <svg width="16" height="16" viewBox="0 0 492.49284 492" xmlns="http://www.w3.org/2000/svg"><path d="m304.140625 82.472656-270.976563 270.996094c-1.363281 1.367188-2.347656 3.09375-2.816406 4.949219l-30.035156 120.554687c-.898438 3.628906.167969 7.488282 2.816406 10.136719 2.003906 2.003906 4.734375 3.113281 7.527344 3.113281.855469 0 1.730469-.105468 2.582031-.320312l120.554688-30.039063c1.878906-.46875 3.585937-1.449219 4.949219-2.8125l271-270.976562zm0 0"/><path d="m476.875 45.523438-30.164062-30.164063c-20.160157-20.160156-55.296876-20.140625-75.433594 0l-36.949219 36.949219 105.597656 105.597656 36.949219-36.949219c10.070312-10.066406 15.617188-23.464843 15.617188-37.714843s-5.546876-27.648438-15.617188-37.71875zm0 0"/></svg>
           </button>
-        </div>
+        </vs-avatar>
+        <input type="file" class="hidden" ref="avatarFileInput" accept="image/*" @change="onchange">
         <h1 class="app-profile-name">{{ loggedInUser.first_name + ' ' + loggedInUser.last_name }}</h1>
       </div>
 
@@ -162,15 +174,19 @@
             text: '',
             socket: null,
             arrivalMessage: null,
-            users: [],
             // user typing
             typing: false,
             timeout: undefined,
-            display_typing: null
-
+            display_typing: null,
+            is_wait_avatar: false,
+            // find user
+            search: '',
+            is_wait_find: false,
+            results: [],
+            // user online
         }),
         computed: {
-            ...mapGetters(['isAuthenticated', 'loggedInUser'])
+            ...mapGetters([ 'isAuthenticated', 'loggedInUser' ])
         },
         created() {
             this.$nuxt.$on('selectChat', (friend) => {
@@ -182,13 +198,20 @@
 
             // user online
             this.socket.emit("login", { userId: this.loggedInUser._id });
+            this.socket.on("online", () => {
+                this.$nuxt.$emit('refresh-conversation');
+            })
+            this.socket.on("offline", () => {
+                this.$nuxt.$emit('refresh-conversation');
+            })
 
             // socket on event from server
             this.socket.emit("addUser", this.loggedInUser._id)
-            this.socket.on("getUsers", users => {
-                this.users = users
-                // console.log(users)
-            })
+
+            // this.socket.on("getUsers", users => {
+            //     // console.log("getUsers ::", users)
+            //     this.$nuxt.$emit('refresh');
+            // })
 
             // Get Typing from Server-side
             this.socket.on("displayTyping", data => {
@@ -205,10 +228,12 @@
                 }
                 this.arrivalMessage && this.current_chat.members.includes(this.arrivalMessage.sender) && this.messages.push(this.arrivalMessage)
                 // console.log("arrivalMessage :", this.arrivalMessage)
+                // this.$store.commit("setLastChat", this.arrivalMessage)
             })
         },
         methods: {
             async openChat(conversation) {
+                this.messages = [];
                 this.current_chat = conversation
                 this.messages = await this.$axios.$get(`/messages/${conversation._id}`)
             },
@@ -216,7 +241,7 @@
                 this.typing = false
                 this.socket.emit("typing", { userId: this.loggedInUser._id, typing: this.typing })
             },
-            typingMessage(e) {
+            typingMessage() {
                 if (!this.typing) {
                     this.typing = true
                     this.socket.emit("typing", { userId: this.loggedInUser._id, typing: this.typing })
@@ -238,8 +263,6 @@
                         "conversationId": this.current_chat._id
                     }
 
-                    // const receiverId = this.current_chat.members.find(member => member !== user._id)
-
                     this.socket.emit("sendMessage", {
                         senderId: this.loggedInUser._id,
                         receiverId: this.friend_chat._id,
@@ -255,8 +278,29 @@
                     }
                 }
             },
+            async onchange() {
+                let file = this.$refs.avatarFileInput.files[0]
+                this.is_wait_avatar = true
+                let formData = new FormData();
+                formData.append("avatar", file)
+                let res = await this.$axios.$put(`/user/${this.loggedInUser._id}`, formData)
+                // await this.$auth.fetchUser() // update user by callback $auth.fetchUser
+                this.$auth.setUser(res.user) // update user by $auth.setUser
+                this.$refs.avatarFileInput.value = null
+                this.is_wait_avatar = false
+            },
+            async findUser() {
+                this.is_wait_find = true
+                let results = await this.$axios.post("/user/find", {
+                    search: this.search
+                })
+                this.results = results.data
+                this.is_wait_find = false
+                // console.log("result :", results.data)
+            },
             async handleLogout() {
                 this.is_wait_logout = true
+                this.socket.emit('offline', { userId: this.loggedInUser._id })
                 await this.$auth.logout();
             },
         },

@@ -1,0 +1,43 @@
+.card-wrapper {
+  width: 100%;
+  &.active {
+    .card-container {
+      background-color: $bg-secondary;
+    }
+  }
+
+  .card-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: $bg-secondary;
+    }
+
+    .card-info {
+      width: 100%;
+      margin-left: 15px;
+
+      h1 {
+        @include font-text($font-16, normal, null)
+      }
+
+      .last-chat, .chat-date {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include font-text($font-14, normal, null);
+      }
+      .last-chat {
+        width: 120px;
+      }
+      .chat-date {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+}

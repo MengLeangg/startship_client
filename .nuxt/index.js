@@ -14,13 +14,15 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_9288bdb0 from 'nuxt_plugin_plugin_9288bdb0' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_cookieuniversalnuxt_b194a834 from 'nuxt_plugin_cookieuniversalnuxt_b194a834' // Source: ./cookie-universal-nuxt.js (mode: 'all')
 import nuxt_plugin_dayjsplugin_da072242 from 'nuxt_plugin_dayjsplugin_da072242' // Source: ./dayjs-plugin.js (mode: 'all')
 import nuxt_plugin_nuxtsocketio_08f7f638 from 'nuxt_plugin_nuxtsocketio_08f7f638' // Source: ./nuxt-socket-io.js (mode: 'all')
 import nuxt_plugin_axios_32a8483e from 'nuxt_plugin_axios_32a8483e' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_pluginserver_117d4d84 from 'nuxt_plugin_pluginserver_117d4d84' // Source: ./color-mode/plugin.server.js (mode: 'server')
+import nuxt_plugin_pluginclient_dcf03094 from 'nuxt_plugin_pluginclient_dcf03094' // Source: ./color-mode/plugin.client.js (mode: 'client')
 import nuxt_plugin_vuesax_2c3217c6 from 'nuxt_plugin_vuesax_2c3217c6' // Source: ../plugins/vuesax.js (mode: 'all')
 import nuxt_plugin_veevalidate_1a0c1998 from 'nuxt_plugin_veevalidate_1a0c1998' // Source: ../plugins/vee-validate.js (mode: 'all')
 import nuxt_plugin_vuechatscroll_74adbcf2 from 'nuxt_plugin_vuechatscroll_74adbcf2' // Source: ../plugins/vue-chat-scroll.js (mode: 'all')
+import nuxt_plugin_infiniteloading_80126b76 from 'nuxt_plugin_infiniteloading_80126b76' // Source: ../plugins/infiniteloading.js (mode: 'all')
 import nuxt_plugin_auth_47db3d9c from 'nuxt_plugin_auth_47db3d9c' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -89,7 +91,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"starship","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Dangrek:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100"}],"style":[],"script":[{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Dangrek:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Dangrek:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
+    head: {"title":"starship","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Ffont-awesome\u002F5.10.2\u002Fcss\u002Fall.min.css"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100&family=Battambang:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100"}],"style":[],"script":[{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100&family=Battambang:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100&family=Battambang:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
 
     store,
     router,
@@ -222,10 +224,6 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_9288bdb0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_cookieuniversalnuxt_b194a834 === 'function') {
-    await nuxt_plugin_cookieuniversalnuxt_b194a834(app.context, inject)
-  }
-
   if (typeof nuxt_plugin_dayjsplugin_da072242 === 'function') {
     await nuxt_plugin_dayjsplugin_da072242(app.context, inject)
   }
@@ -238,6 +236,14 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_axios_32a8483e(app.context, inject)
   }
 
+  if (process.server && typeof nuxt_plugin_pluginserver_117d4d84 === 'function') {
+    await nuxt_plugin_pluginserver_117d4d84(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_pluginclient_dcf03094 === 'function') {
+    await nuxt_plugin_pluginclient_dcf03094(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_vuesax_2c3217c6 === 'function') {
     await nuxt_plugin_vuesax_2c3217c6(app.context, inject)
   }
@@ -248,6 +254,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_vuechatscroll_74adbcf2 === 'function') {
     await nuxt_plugin_vuechatscroll_74adbcf2(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_infiniteloading_80126b76 === 'function') {
+    await nuxt_plugin_infiniteloading_80126b76(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_47db3d9c === 'function') {

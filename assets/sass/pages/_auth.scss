@@ -164,3 +164,9 @@ main {
 .vs-input__label {
   @include font-text($font-14, normal, $dark);
 }
+.vs-input {
+  width: 100%;
+  background-color: $light !important;
+  @include font-text($font-16, normal, $dark);
+}
+

@@ -1,0 +1,76 @@
+// fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+
+// slide-down
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: all 1s;
+}
+
+.slide-down-enter-to, .slide-down-leave {
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.slide-down-enter, .slide-down-leave-to {
+  overflow: hidden;
+  max-height: 0;
+}
+
+// slide out
+.slide-out-enter,
+.slide-out-leave-to {
+  opacity: 0;
+  transform: translateY(-100px);
+  margin-bottom: -100px;
+}
+
+
+// zoom animation
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// Dropdown animation
+.dropdown-enter,
+.dropdown-leave-to {
+  transform: scaleY(0.7);
+  opacity: 0;
+}
+
+.dropdown-enter-to,
+.dropdown-leave {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.3s ease-out;
+  transform-origin: top center;
+}

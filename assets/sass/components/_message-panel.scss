@@ -1,0 +1,156 @@
+.message-panel_wrapper {
+  height: 100%;
+
+  .message-panel {
+
+    &_empty {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //background: url("https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png") center / cover no-repeat;
+
+      @include respond-to('md') {
+        display: none;
+      }
+    }
+
+    &_container {
+
+      flex: 3;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: .2s;
+      background-color: $bg-app-main;
+
+      @include respond-to('md') {
+        height: 100vh;
+      }
+
+
+      .panel-header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        //@include respond-to('sm') {
+        //  .vs-avatar-content {
+        //    width: 40px !important;
+        //    height: 40px !important;
+        //  }
+        //
+        //}
+
+        .btn-back {
+          display: none;
+          padding: 7px;
+          margin-right: 10px;
+          border-radius: 50%;
+          background-color: rgba($gainboro, .3);
+
+          @include respond-to('md') {
+            display: block;
+          }
+
+        }
+
+        .chat-name {
+          @include font-text($font-16, 600, null);
+        }
+        .online_at {
+          @include font-text($font-14, normal, $dark-gray)
+        }
+
+        .btn {
+          padding: 15px;
+          border-radius: 50%;
+          margin-left: 5px;
+          background-color: $bg-secondary;
+
+          @include respond-to('sm') {
+            padding: 10px;
+          }
+
+          svg {
+            fill: $color;
+          }
+        }
+
+      }
+
+      .message-list_container {
+
+        position: relative;
+        padding: 0 20px;
+        margin-bottom: auto;
+        margin-top: 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        // app left side scroll bar style
+        &::-webkit-scrollbar {
+          //display: none;
+          width: 5px; /* width of the entire scrollbar */
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;        /* color of the tracking area */
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $light-gray;    /* color of the scroll thumb */
+          border-radius: 20px;       /* roundness of the scroll thumb */
+        }
+
+      }
+
+      .message_input {
+
+        padding: 10px 20px;
+
+        .input-container {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          border-radius: 15px;
+          background-color: $bg-secondary;
+
+          input[type="text"] {
+            width: 100%;
+            padding: 13px;
+            background-color: transparent;
+            @include font-text($font-14, normal, null)
+          }
+
+          .chat-input_actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10px;
+
+            .btn {
+              padding: 7px;
+              border-radius: 50%;
+              margin-right: 5px;
+              &:hover {
+                background-color: #EEEEF1;
+              }
+
+              svg {
+                fill: $primary;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

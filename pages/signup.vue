@@ -73,6 +73,7 @@
     export default {
         layout: "empty",
         middleware: 'guest',
+        colorMode: 'light',
         data: () => ({
             loading: false,
             first_name: '',
@@ -93,6 +94,7 @@
                         password: this.password
                     })
                     await this.$router.push('/signin')
+                    this.$store.commit("setActive", 1)
                 }
                 catch (error) {
                     this.loading = false
@@ -109,6 +111,6 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import '~/assets/sass/pages/_auth.scss';
 </style>

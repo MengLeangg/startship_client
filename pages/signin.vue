@@ -46,41 +46,43 @@
   export default {
       layout: "empty",
       middleware: 'guest',
+      colorMode: 'light',
       data: () => ({
-        username: '',
-        password: '',
-        is_loading: false,
+          username: '',
+          password: '',
+          is_loading: false,
       }),
       methods: {
-        async handleSignIn() {
-          this.is_loading = true
-          try {
-              await this.$auth.loginWith('local', {
-                  data: {
-                      email: this.username,
-                      password: this.password
-                  }
-              })
-              .then(() => {
-                this.$router.push('/messages')
-                this.is_loading = false
-              })
+          async handleSignIn() {
+              this.is_loading = true
+              try {
+                  await this.$auth.loginWith('local', {
+                      data: {
+                          email: this.username,
+                          password: this.password
+                      }
+                  })
+                  .then(() => {
+                      this.$store.commit("setActive", 1)
+                      this.$router.push('/chat')
+                      this.is_loading = false
+                  })
+              }
+              catch (error) {
+                  this.error = error.response.data;
+                  this.is_loading = false
+                  this.$vs.notification({
+                    color: 'danger',
+                    position: 'top-center',
+                    title: 'Incorrect Credentials',
+                    text: `Verify your user name and password and try again.`
+                  })
+              }
           }
-          catch (error) {
-              this.error = error.response.data;
-              this.is_loading = false
-              this.$vs.notification({
-                color: 'danger',
-                position: 'top-center',
-                title: 'Incorrect Credentials',
-                text: `Verify your user name and password and try again.`
-              })
-          }
-        }
       }
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import '~/assets/sass/pages/_auth.scss';
 </style>
