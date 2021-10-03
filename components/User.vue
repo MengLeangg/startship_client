@@ -2,6 +2,7 @@
   <div class="card-wrapper" :class="{ 'active' : user_active ? user_active._id === user._id : '' }" @click="openConversation">
     <div class="card-container">
       <div class="card-avatar">
+<!--        <div v-if="$fetchState.pending" class="avatar-loading animate-pulse"></div>-->
         <vs-avatar circle badge :badge-color="user.online ? 'success' : 'danger'">
           <img v-if="user.avatar" :src="user.avatar" :alt="user.first_name + ' ' + user.last_name">
           <template v-if="!user.avatar" #text>
@@ -10,11 +11,12 @@
         </vs-avatar>
       </div>
       <div class="card-info">
+<!--        <div v-if="$fetchState.pending" class="loading-wrap animate-pulse"></div>-->
         <h1>{{ user.first_name + ' ' + user.last_name }}</h1>
-        <div class="w-full flex items-center">
+<!--        <div class="w-full flex items-center">-->
 <!--          <p class="last-chat">Hello</p>-->
 <!--          <p class="chat-date" v-show="!user.online">{{ $dayjs(user.online_at).fromNow() }}</p>-->
-        </div>
+<!--        </div>-->
       </div>
     </div>
   </div>
@@ -25,7 +27,7 @@
     export default {
         props: ['conversation'],
         data: () => ({
-            user: {}
+            user: {},
         }),
         computed: {
             ...mapGetters([ 'loggedInUser' ]),

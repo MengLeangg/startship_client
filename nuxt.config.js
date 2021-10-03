@@ -8,8 +8,15 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'Realtime chat application for free' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'twitter:title', name: 'twitter:title', content: "Starship" },
+      { hid: 'twitter:description', name: 'twitter:description', content: "Realtime chat application for free" },
+      { hid: 'twitter:image', name: 'twitter:image', content: "https://ak.picdn.net/shutterstock/videos/1034289134/thumb/1.jpg" },
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: "Starship" },
+      { hid: 'og:title', property: 'og:title', content: "Starship" },
+      { hid: 'og:description', property: 'og:description', content: "Realtime chat application for free" },
+      { hid: 'og:image', property: 'og:image', content: "https://ak.picdn.net/shutterstock/videos/1034289134/thumb/1.jpg" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -65,14 +72,6 @@ export default {
         wght: [100, 200, 300, 400, 500, 600, 700, 900],
         ital: [100]
       },
-      // Dangrek: {
-      //   wght: [100, 200, 300, 400, 500, 600, 700],
-      //   ital: [100]
-      // },
-      // Bokor: {
-      //   wght: [100, 200, 300, 400, 500, 600, 700, 900],
-      //   ital: [100]
-      // },
       Battambang: {
         wght: [100, 200, 300, 400, 500, 600, 700, 900],
         ital: [100]
@@ -114,7 +113,7 @@ export default {
 
   axios: {
     name: 'main',
-    baseURL: "http://localhost:5000/api",  // here set your API url
+    baseURL: "https://starship-api.herokuapp.com/api",  // here set your API url
     // proxy: true
   },
 
@@ -122,14 +121,8 @@ export default {
   io: {
     sockets: [{
       name: 'home',
-      url: 'http://localhost:5000', // IO server lives here
+      url: 'https://starship-api.herokuapp.com', // IO server lives here
       default: true,
-      // vuex: {
-      //   mutations: [{
-      //     sendMessage: 'ADD_MESSAGE',
-      //     getMessage: 'ADD_MESSAGE'
-      //   }]
-      // }
     }]
   },
 
